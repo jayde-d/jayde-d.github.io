@@ -92,9 +92,11 @@
 			var random_color = colors[Math.floor(Math.random() * colors.length)];
 			document.getElementById('background').style.filter = "url(" + random_color + ")";
 			
+			document.getElementById('background').style.backgroundSize = "contain"
 			
 			var bg_num = Math.floor(Math.random() * 2);
 			document.getElementById('background').style.backgroundImage = "url(media/background_" + bg_num + ".jpg)";
+			
 		</script>
 
 		
