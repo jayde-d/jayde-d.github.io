@@ -46,7 +46,7 @@
 .background {
 	background-image: url(media/background_45.jpg);
 	filter: url(#background-filter);
-	background-size: contain;
+	background-size: length auto 100%;
 	padding: 0px 0px 0px 0px;
 	z-index: -1;
 	position: absolute;
