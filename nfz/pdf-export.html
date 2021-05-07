@@ -24,8 +24,8 @@
 		
 		var DBOpenRequest = window.indexedDB.open("/idbfs");
 		var db;
-		var objects = [];
-		var images = [];
+		var objects = new Array();
+		var images = new Array();
 
 
 		DBOpenRequest.onsuccess = function(event) {
