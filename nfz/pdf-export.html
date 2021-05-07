@@ -80,13 +80,13 @@
 		doc.setDrawColor(128, 128, 128); // draw grey lines
 		doc.setLineWidth(0.1);
 		 
-		doc.line(105, 20, 105, 74.25);
-		doc.line(105, 222.75, 105, 277);
+		doc.line(105, 1, 105, 74.25);
+		doc.line(105, 222.75, 105, 297);
 		
 		// 0
-		doc.line(20, 74.25, 190, 74.25);
-		doc.line(20, 148.5, 190, 148.5);
-		doc.line(20, 222.75, 190, 222.75);
+		doc.line(1, 74.25, 209, 74.25);
+		doc.line(1, 148.5, 209, 148.5);
+		doc.line(1, 222.75, 209, 222.75);
 		// 297
 		
 		doc.setLineDashPattern([2.5]);
@@ -94,8 +94,11 @@
 		//doc.line(105, 20, 105, 277);
 		doc.line(105, 74.25, 105, 222.75);
 		doc.rect(1, 1, 208, 295);
-
-		//doc.addImage()
+		
+		
+		var testimage = new Image();
+		testimage.src = "https://www.w3schools.com/html/img_chania.jpg";
+		doc.addImage(testimage, "JPG ", 20.75, 15.96, 63.5, 42.33);
 
 		//doc.text("Hello world!", 10, 10);
 		doc.setFontSize(6);
