@@ -40,12 +40,13 @@
 			{
 				objects = objectsRequest.result;
 				console.log(objects);
-				objects.forEach(forEachFunction);
+				objects.forEach(addToImages);
+				images.forEach();
 			}
 		}
 
 		
-		function forEachFunction (item, index)
+		function addToImages (item, index)
 		{
 			var counter;
 			//console.log(item);
@@ -56,6 +57,13 @@
 			}
 			console.log("counter: " + counter);
 			console.log(images);
+		}
+		
+		function addImagesToPage (item, index)
+		{
+			var image = document.createElement('img');
+			image.src = URL.createObjectURL( new Blob(item, { type: "image/png" } /* (1) */));
+			document.body.innerHTML += image;
 		}
 		
 		
