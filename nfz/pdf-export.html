@@ -15,6 +15,11 @@
 		
 		var seed = urlParams.get("seed");
 		var dir = urlParams.get("directory");
+		if(dir == null)
+		{
+			window.alert
+			return;
+		}
 		var splitDir = dir.split("/");
 		
 		console.log(seed);
@@ -41,7 +46,7 @@
 				objects = objectsRequest.result;
 				console.log(objects);
 				objects.forEach(addToImages);
-				images.forEach(addImagesToPage);
+				//images.forEach(addImagesToPage);
 			}
 		}
 
@@ -56,17 +61,9 @@
 				counter++;
 			}
 			console.log("counter: " + counter);
-			console.log(images);
+			//console.log(images);
 		}
 		
-		function addImagesToPage (item, index)
-		{
-			var node = document.createElement("LI");
-			var image = document.createElement('img');
-			image.src = URL.createObjectURL( new Blob(item, { type: "image/png" } /* (1) */));
-			node.appendChild(image);
-			document.getElementById("myList").appendChild(node);
-		}
 		
 		
 		
