@@ -66,9 +66,11 @@
 			
 			var objectStore = transaction.objectStore("FILE_DATA");
 			var objectsRequest = objectStore.getAll();
-			var objects = objectsRequest.result;
-			objects.onsuccess = function()
+			var objects;
+
+			objectsRequest.onsuccess = function()
 			{
+				objects = objectsRequest.result;
 				console.log(objects);
 			}
 		}
