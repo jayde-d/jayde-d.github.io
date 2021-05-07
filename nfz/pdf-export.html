@@ -17,7 +17,7 @@
 
 		doc.setDrawColor(128, 128, 128); // draw grey lines
 		doc.setLineWidth(0.1);
-		
+		 
 		doc.line(105, 20, 105, 74.25);
 		doc.line(105, 222.75, 105, 277);
 		
@@ -44,7 +44,24 @@
 		doc.text("7", 100, 111.375, align = "center" , rotate = 0);
 		doc.text("8", 100, 185.625, align = "center" , rotate = 0);
 		
+		var queryString = window.location.search;
+		var urlParams = new URLSearchParams(queryString);
 		
+		var seed = urlParams.get("seed");
+		var dir = urlParams.get("directory");
+		var splitDir = dir.split("/");
+		
+		console.log(seed);
+		console.log(dir)
+		
+		var DBOpenRequest = window.indexedDB.open(dir, 4);
+		var db;
+		
+		DBOpenRequest.onsuccess = function(event) {
+		console.log("SUCCESS!");
+		db = DBOpenRequest.result;
+		console.log(db);
+		}
 		doc.save("a4.pdf");
 
 		}
