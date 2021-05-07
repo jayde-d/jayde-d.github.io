@@ -58,7 +58,8 @@
 		
 		var DBOpenRequest = window.indexedDB.open("/idbfs");
 		var db;
-		
+		var objects;
+
 		DBOpenRequest.onsuccess = function(event) {
 			console.log("SUCCESS!");
 			db = DBOpenRequest.result;
@@ -66,7 +67,6 @@
 			
 			var objectStore = transaction.objectStore("FILE_DATA");
 			var objectsRequest = objectStore.getAll();
-			var objects;
 
 			objectsRequest.onsuccess = function()
 			{
