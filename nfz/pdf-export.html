@@ -67,8 +67,11 @@
 		var objectStore = transaction.objectStore("FILE_DATA");
 		var objectsRequest = objectStore.getAll();
 		var objects = objectsRequest.result;
-		console.log(objects);
+		objects.onsuccess = function()
+		{
+			console.log(objects);
 		}
+		
 		
 		//END
 		doc.save("ZINE.pdf");
