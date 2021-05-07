@@ -53,7 +53,7 @@
 		
 		function addToImages (item, index)
 		{
-			var counter;
+			var counter = 0;
 			//console.log(item);
 			if(item.mode == 33206)
 			{
@@ -94,14 +94,14 @@
 
 		//doc.text("Hello world!", 10, 10);
 		
-		doc.text("1", 100, 259.875, align = "center" , rotate = 0);
-		doc.text("2", 110, 259.875, align = "center" , rotate = 180);
-		doc.text("3", 110, 185.625, align = "center" , rotate = 180);
-		doc.text("4", 110, 111.375, align = "center" , rotate = 180);
-		doc.text("5", 110, 37.125, align = "center" , rotate = 180);
-		doc.text("6", 100, 37.125, align = "center" , rotate = 0);
-		doc.text("7", 100, 111.375, align = "center" , rotate = 0);
-		doc.text("8", 100, 185.625, align = "center" , rotate = 0);		
+		doc.text("1", 90, 259.875, align = "center" , baseline = "middle", rotate = 0);
+		doc.text("2", 120, 259.875, align = "center" , baseline = "middle", rotate = 180);
+		doc.text("3", 120, 185.625, align = "center" , baseline = "middle", rotate = 180);
+		doc.text("4", 120, 111.375, align = "center" , baseline = "middle", rotate = 180);
+		doc.text("5", 120, 37.125, align = "center" , baseline = "middle", rotate = 180);
+		doc.text("6", 90, 37.125, align = "center" , baseline = "middle", rotate = 0);
+		doc.text("7", 90, 111.375, align = "center" , baseline = "middle", rotate = 0);
+		doc.text("8", 90, 185.625, align = "center" , baseline = "middle", rotate = 0);
 		
 		//END
 		doc.save("ZINE.pdf");
