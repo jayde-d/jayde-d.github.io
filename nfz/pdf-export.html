@@ -60,18 +60,18 @@
 		var db;
 		
 		DBOpenRequest.onsuccess = function(event) {
-		console.log("SUCCESS!");
-		db = DBOpenRequest.result;
-		var transaction = db.transaction("FILE_DATA", "readwrite");
-		
-		var objectStore = transaction.objectStore("FILE_DATA");
-		var objectsRequest = objectStore.getAll();
-		var objects = objectsRequest.result;
-		objects.onsuccess = function()
-		{
-			console.log(objects);
+			console.log("SUCCESS!");
+			db = DBOpenRequest.result;
+			var transaction = db.transaction("FILE_DATA", "readwrite");
+			
+			var objectStore = transaction.objectStore("FILE_DATA");
+			var objectsRequest = objectStore.getAll();
+			var objects = objectsRequest.result;
+			objects.onsuccess = function()
+			{
+				console.log(objects);
+			}
 		}
-		
 		
 		//END
 		doc.save("ZINE.pdf");
