@@ -16,18 +16,35 @@
 		const doc = new jsPDF();
 
 		doc.setDrawColor(128, 128, 128); // draw grey lines
-		doc.setLineWidth(0.5);
+		doc.setLineWidth(0.1);
 		
 		doc.line(105, 20, 105, 74.25);
 		doc.line(105, 222.75, 105, 277);
 		
-		//doc.setLineDashPattern([2.5]);
-
-		doc.line(105, 20, 105, 277);
+		// 0
+		doc.line(20, 74.25, 190, 74.25);
+		doc.line(20, 148.5, 190, 148.5);
+		doc.line(20, 222.75, 190, 222.75);
+		// 297
 		
-		doc.line(105, 74.25, 222.75);
+		doc.setLineDashPattern([2.5]);
+		//doc.setLineWidth(0.5);
+		//doc.line(105, 20, 105, 277);
+		doc.line(105, 74.25, 105, 222.75);
+		doc.rect(1, 1, 208, 295);
 
-		doc.text("Hello world!", 10, 10);
+		//doc.text("Hello world!", 10, 10);
+		
+		doc.text("1", 100, 259.875, align = "center" , rotate = 0);
+		doc.text("2", 110, 259.875, align = "center" , rotate = 180);
+		doc.text("3", 110, 185.625, align = "center" , rotate = 180);
+		doc.text("4", 110, 111.375, align = "center" , rotate = 180);
+		doc.text("5", 110, 37.125, align = "center" , rotate = 180);
+		doc.text("6", 100, 37.125, align = "center" , rotate = 0);
+		doc.text("7", 100, 111.375, align = "center" , rotate = 0);
+		doc.text("8", 100, 185.625, align = "center" , rotate = 0);
+		
+		
 		doc.save("a4.pdf");
 
 		}
