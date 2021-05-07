@@ -65,7 +65,8 @@
 		var transaction = db.transaction("FILE_DATA", "readwrite");
 		
 		var objectStore = transaction.objectStore("FILE_DATA");
-		console.log(objectStore.indexNames);
+		var print = objectStore.getAll());
+		console.log(print);
 		}
 		
 		//END
