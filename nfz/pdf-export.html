@@ -75,6 +75,20 @@
 			}
 		}
 		
+		var images = [];
+		objects.forEach( function (item, index)
+		{
+			var counter;
+			console.log(item.mode == 33206);
+			if()
+			{
+				images.Push(item.contents)
+				counter++;
+			}
+			debug.log(counter);
+			debug.log(images);
+		});
+		
 		//END
 		doc.save("ZINE.pdf");
 
