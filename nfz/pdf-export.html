@@ -10,6 +10,58 @@
 	<script>
 		window.onload = function() {
 		
+		var queryString = window.location.search;
+		var urlParams = new URLSearchParams(queryString);
+		
+		var seed = urlParams.get("seed");
+		var dir = urlParams.get("directory");
+		var splitDir = dir.split("/");
+		
+		console.log(seed);
+		console.log(dir)
+		
+		console.log(splitDir[2]+"/"+splitDir[3]);
+		
+		var DBOpenRequest = window.indexedDB.open("/idbfs");
+		var db;
+		var objects = [];
+		var images = [];
+
+
+		DBOpenRequest.onsuccess = function(event) {
+			console.log("SUCCESS!");
+			db = DBOpenRequest.result;
+			var transaction = db.transaction("FILE_DATA", "readwrite");
+			
+			var objectStore = transaction.objectStore("FILE_DATA");
+			var objectsRequest = objectStore.getAll();
+
+			objectsRequest.onsuccess = function()
+			{
+				objects = objectsRequest.result;
+				console.log(objects);
+				objects.forEach(forEachFunction);
+			}
+		}
+
+		
+		function forEachFunction (item, index)
+		{
+			var counter;
+			//console.log(item);
+			if(item.mode == 33206)
+			{
+				images.Push(item.contents)
+				counter++;
+			}
+			debug.log("counter: " + counter);
+			debug.log(images);
+		}
+		
+		
+		
+		
+		
 		const { jsPDF } = window.jspdf;
 		
 		// Default export is a4 paper, portrait, using millimeters for units
@@ -42,52 +94,7 @@
 		doc.text("5", 110, 37.125, align = "center" , rotate = 180);
 		doc.text("6", 100, 37.125, align = "center" , rotate = 0);
 		doc.text("7", 100, 111.375, align = "center" , rotate = 0);
-		doc.text("8", 100, 185.625, align = "center" , rotate = 0);
-		
-		var queryString = window.location.search;
-		var urlParams = new URLSearchParams(queryString);
-		
-		var seed = urlParams.get("seed");
-		var dir = urlParams.get("directory");
-		var splitDir = dir.split("/");
-		
-		console.log(seed);
-		console.log(dir)
-		
-		console.log(splitDir[2]+"/"+splitDir[3]);
-		
-		var DBOpenRequest = window.indexedDB.open("/idbfs");
-		var db;
-		var objects = [];
-
-		DBOpenRequest.onsuccess = function(event) {
-			console.log("SUCCESS!");
-			db = DBOpenRequest.result;
-			var transaction = db.transaction("FILE_DATA", "readwrite");
-			
-			var objectStore = transaction.objectStore("FILE_DATA");
-			var objectsRequest = objectStore.getAll();
-
-			objectsRequest.onsuccess = function()
-			{
-				objects = objectsRequest.result;
-				console.log(objects);
-			}
-		}
-		
-		var images = [];
-		objects.forEach( function (item, index)
-		{
-			var counter;
-			//console.log(item);
-			if(item.mode == 33206)
-			{
-				images.Push(item.contents)
-				counter++;
-			}
-			debug.log(counter);
-			debug.log(images);
-		});
+		doc.text("8", 100, 185.625, align = "center" , rotate = 0);		
 		
 		//END
 		doc.save("ZINE.pdf");
