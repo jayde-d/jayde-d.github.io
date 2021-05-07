@@ -62,7 +62,7 @@
 		DBOpenRequest.onsuccess = function(event) {
 		console.log("SUCCESS!");
 		db = DBOpenRequest.result;
-		var transaction = db.transaction("/idfbs", "readwrite");
+		var transaction = db.transaction("FILE_DATA", "readwrite");
 		
 		var objectStore = transaction.objectStore("/idfbs");
 		console.log(objectStore.indexNames);
