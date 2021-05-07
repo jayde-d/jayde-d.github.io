@@ -58,7 +58,7 @@
 		
 		var DBOpenRequest = window.indexedDB.open("/idbfs");
 		var db;
-		var objects;
+		var objects = [];
 
 		DBOpenRequest.onsuccess = function(event) {
 			console.log("SUCCESS!");
