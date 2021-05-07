@@ -64,7 +64,7 @@
 		db = DBOpenRequest.result;
 		var transaction = db.transaction("FILE_DATA", "readwrite");
 		
-		var objectStore = transaction.objectStore("/idfbs");
+		var objectStore = transaction.objectStore("FILE_DATA");
 		console.log(objectStore.indexNames);
 		}
 		
