@@ -54,15 +54,22 @@
 		console.log(seed);
 		console.log(dir)
 		
-		var DBOpenRequest = window.indexedDB.open(dir, 4);
+		console.log(splitDir[2]+"/"+splitDir[3]);
+		
+		var DBOpenRequest = window.indexedDB.open("/idfbs");
 		var db;
 		
 		DBOpenRequest.onsuccess = function(event) {
 		console.log("SUCCESS!");
 		db = DBOpenRequest.result;
-		console.log(db);
+		var transaction = db.transaction([splitDir[2]+"/"+splitDir[3]], "readwrite");
+		
+		var objectStore = transaction.objectStore("/idfbs");
+		console.log(objectStore.indexNames);
 		}
-		doc.save("a4.pdf");
+		
+		//END
+		doc.save("ZINE.pdf");
 
 		}
 	</script>
