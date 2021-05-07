@@ -6,7 +6,7 @@
 	</head>
 	<body>
 	<h1>Test Page</h1>
-	
+	<ul id="myList">
 	<script>
 		window.onload = function() {
 		
@@ -61,9 +61,11 @@
 		
 		function addImagesToPage (item, index)
 		{
+			var node = document.createElement("LI");
 			var image = document.createElement('img');
 			image.src = URL.createObjectURL( new Blob(item, { type: "image/png" } /* (1) */));
-			document.body.innerHTML += image;
+			node.appendChild(image);
+			document.getElementById("myList").appendChild(node);
 		}
 		
 		
