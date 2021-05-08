@@ -8,48 +8,48 @@
 	<h1>Test Page</h1>
 	<ul id="myList">
 	<script>
-		async function addAllImages()
+		async function addAllImages(doc)
 		{
-			await addImageOne();
-			await addImageTwo();
-			await addImageThree();
-			await addImageFour();
-			await addImageFive();
-			await addImageSix();
-			await addImageSeven();
-			await addImageEight();
+			await addImageOne(doc);
+			await addImageTwo(doc);
+			await addImageThree(doc);
+			await addImageFour(doc);
+			await addImageFive(doc);
+			await addImageSix(doc);
+			await addImageSeven(doc);
+			await addImageEight(doc);
 		}
 
 		
-		async function addImageOne(){
+		async function addImageOne(doc){
 			doc.addImage(images[0], "PNG", 5, 229.875, 90, 60);
 			return;
 		}		
-		async function addImageTwo(){
+		async function addImageTwo(doc){
 			doc.addImage(testimage , "PNG", 120, 229.875, 90, 60, null, null, 180);
 			return;
 		}
-		async function addImageThree(){
+		async function addImageThree(doc){
 			//doc.addImage(images[2], "PNG", 5, 7.125, 90, 60);
 			return;
 		}
-		async function addImageFour(){
+		async function addImageFour(doc){
 			//doc.addImage(images[3], "PNG", 5, 7.125, 90, 60);
 			return;
 		}
-		async function addImageFive(){
+		async function addImageFive(doc){
 			//doc.addImage(images[4], "PNG", 5, 7.125, 90, 60);
 			return;
 		}
-		async function addImageSix(){
+		async function addImageSix(doc){
 			doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
 			return;
 		}
-		async function addImageSeven(){
+		async function addImageSeven(doc){
 			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
 			return;
 		}
-		async function addImageEight(){
+		async function addImageEight(doc){
 			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
 			return;
 		}
@@ -159,7 +159,7 @@
 		//doc.addImage(testimage, "PNG ", 2.5, 7.125, 90, 60);
 		
 		
-		addAllImages();
+		addAllImages(doc);
 		
 		doc.setFontSize(6);
 		
