@@ -3,6 +3,7 @@
 	<head>
 	    <meta charset="utf-8" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+		<script src="Raleway-Light-normal.js"></script>
 	</head>
 	<body>
 	<h1>Test Page</h1>
@@ -157,6 +158,8 @@
 
 		doc.setDrawColor(128, 128, 128); // draw grey lines
 		doc.setLineWidth(0.1);
+		doc.setFont("Raleway-Light-normal");
+		doc.setFontType("normal");
 		 
 		doc.line(105, 1, 105, 74.25);
 		doc.line(105, 222.75, 105, 297);
@@ -193,6 +196,10 @@
 		doc.text("6", 100, 37.125, align = "center" , rotate = 0);
 		doc.text("7", 100, 111.375, align = "center" , rotate = 0);
 		doc.text("8", 100, 185.625, align = "center" , rotate = 0);
+		
+		
+		doc.setFontSize(24);
+		doc.text(name, 10, 229.875);
 		
 		//END
 		doc.save("ZINE.pdf");
