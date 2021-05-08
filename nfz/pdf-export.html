@@ -11,53 +11,21 @@
 		async function addAllImages(doc, images = [])
 		{
 			await addImageOne(doc, images);
-			await addImageTwo(doc, images);
-			await addImageThree(doc, images);
-			await addImageFour(doc, images);
-			await addImageFive(doc, images);
-			await addImageSix(doc, images);
-			await addImageSeven(doc, images);
-			await addImageEight(doc, images);
 		}
 
 		
 		function addImageOne(doc, images = []){
 			doc.addImage(images[0], "PNG", 5, 229.875, 90, 60);
-			doc.addImage(images[1] , "PNG", 120, 229.875, 90, 60, null, null, 180);
+			doc.addImage(images[1] , "PNG", 210, 169.875, 90, 60, null, null, 180);
+			doc.addImage(images[2], "PNG", 210, 95.625, 90, 60, null, null, 180);
+			doc.addImage(images[3], "PNG", 210, 21.375, 90, 60, null, null, 180);
+			doc.addImage(images[4], "PNG", 210, 7.125, 90, 60, null, null, 180);
 			doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
 			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
 			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
-
+			
 			return;
 		}		
-		function addImageTwo(doc, images = []){
-			doc.addImage(images[1] , "PNG", 120, 229.875, 90, 60, null, null, 180);
-			return;
-		}
-		function addImageThree(doc, images = []){
-			//doc.addImage(images[2], "PNG", 5, 7.125, 90, 60);
-			return;
-		}
-		function addImageFour(doc, images = []){
-			//doc.addImage(images[3], "PNG", 5, 7.125, 90, 60);
-			return;
-		}
-		function addImageFive(doc, images = []){
-			//doc.addImage(images[4], "PNG", 5, 7.125, 90, 60);
-			return;
-		}
-		function addImageSix(doc, images = []){
-			doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
-			return;
-		}
-		function addImageSeven(doc, images = []){
-			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
-			return;
-		}
-		function addImageEight(doc, images = []){
-			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
-			return;
-		}
 
 	
 	
