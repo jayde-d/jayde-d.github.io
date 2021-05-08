@@ -10,11 +10,7 @@
 	<script>
 		async function addAllImages(doc, images = [])
 		{
-			if(await addImageOne(doc, images) == false)
-			{
-				return;
-			}
-			
+			await addImageOne(doc, images);
 		}
 
 		
@@ -28,13 +24,13 @@
 			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
 			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
 			
-			return true;
+			return;
 		}		
 
 	
 	
 	
-		window.onload = function() {
+		window.onload = async function() {
 		
 		var queryString = window.location.search;
 		var urlParams = new URLSearchParams(queryString);
@@ -136,7 +132,8 @@
 		//doc.addImage(testimage, "PNG ", 2.5, 7.125, 90, 60);
 		
 		
-		addAllImages(doc, images);
+		//addAllImages(doc, images);
+		await addImageOne(doc, images);
 		
 		doc.setFontSize(6);
 		
