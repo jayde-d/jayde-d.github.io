@@ -9,57 +9,25 @@
 	<h1>Test Page</h1>
 	<ul id="myList">
 	<script>
-		async function addAllImages(doc, images = [])
-		{
-			await addImageOne(doc, images);
-		}
-
-		
-		function addImageOne(doc, images = []){
-			doc.addImage(images[0], "PNG", 5, 229.875, 90, 60);
-			doc.addImage(images[1] , "PNG", 205, 169.875, 90, 60, null, null, 180);
-			doc.addImage(images[2], "PNG", 205, 95.625, 90, 60, null, null, 180);
-			doc.addImage(images[3], "PNG", 205, 21.375, 90, 60, null, null, 180);
-			doc.addImage(images[4], "PNG", 205, -52.875, 90, 60, null, null, 180);
-			doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
-			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
-			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
-			
-			return;
-		}		
-
 		function testAsync(doc, images = []){
 		return new Promise((resolve,reject)=>{
 			//here our function should be implemented 
 			setTimeout(()=>{
-				doc.addImage(images[0], "PNG", 5, 229.875, 90, 60);
-				doc.addImage(images[1] , "PNG", 205, 169.875, 90, 60, null, null, 180);
-				doc.addImage(images[2], "PNG", 205, 95.625, 90, 60, null, null, 180);
-				doc.addImage(images[3], "PNG", 205, 21.375, 90, 60, null, null, 180);
-				doc.addImage(images[4], "PNG", 205, -52.875, 90, 60, null, null, 180);
-				doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
-				doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
-				doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
+				doc.addImage(images[0], "PNG", 5, 229.875, 90, 60, null, "FAST");
+				doc.addImage(images[1] , "PNG", 205, 169.875, 90, 60, null, "FAST", 180);
+				doc.addImage(images[2], "PNG", 205, 95.625, 90, 60, null, "FAST", 180);
+				doc.addImage(images[3], "PNG", 205, 21.375, 90, 60, null, "FAST", 180);
+				doc.addImage(images[4], "PNG", 205, -52.875, 90, 60, null, "FAST", 180);
+				doc.addImage(images[5], "PNG", 5, 7.125, 90, 60, null, "FAST");
+				doc.addImage(images[6], "PNG", 5, 81.375, 90, 60, null, "FAST");
+				doc.addImage(images[7], "PNG", 5, 155.625, 90, 60, null, "FAST");
 				resolve();
 			;} , 1000
 			);
 		});
 		}
 	
-	
-		var images = new Array();
 		
-		function addToImages (item, index)
-		{
-			if(item.mode == 33206)
-			{
-				//keys.push(allKeys[index]);
-				images.push(item.contents);
-			}
-			return;
-		}
-
-	
 		function clearDB()
 		{
 			var DBOpenRequest = window.indexedDB.open("/idbfs");
@@ -154,7 +122,7 @@
 		
 		
 		const { jsPDF } = window.jspdf;
-		const doc = new jsPDF();
+		const doc = new jsPDF( "p", "mm", "a4", true, true);
 
 		console.log(doc.getFontList());
 
