@@ -86,6 +86,7 @@
 		
 		var seed = urlParams.get("seed");
 		var dir = urlParams.get("directory");
+		var name = urlParams.get("name");
 		if(dir == null)
 		{
 			window.alert("This page doesn't run correctly if you don't directly come from the zine generator!")
@@ -96,10 +97,11 @@
 		
 			var splitDir = dir.split("/");
 			
+			console.log(name);
 			console.log(seed);
-			console.log(dir)
+			//console.log(dir)
 			
-			console.log(splitDir[2]+"/"+splitDir[3]);
+			//console.log(splitDir[2]+"/"+splitDir[3]);
 			
 			var DBOpenRequest = window.indexedDB.open("/idbfs");
 			var db;
@@ -159,7 +161,7 @@
 
 		doc.setDrawColor(128, 128, 128); // draw grey lines
 		doc.setLineWidth(0.1);
-		doc.setFont("Raleway-Light-normal", "normal");
+		doc.setFont("Raleway-Light", "normal");
 		//doc.setFontType("normal");
 		 
 		doc.line(105, 1, 105, 74.25);
@@ -198,7 +200,7 @@
 		doc.text("7", 100, 111.375, align = "center" , rotate = 0);
 		doc.text("8", 100, 185.625, align = "center" , rotate = 0);
 		
-		
+		doc.setTextColor("#FFFFFF");
 		doc.setFontSize(24);
 		doc.text(name, 10, 229.875);
 		
