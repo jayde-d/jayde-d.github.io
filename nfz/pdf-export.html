@@ -52,22 +52,17 @@
 					objects = objectsRequest.result;
 					//console.log(objects);
 					objects.forEach(addToImages);
-					//images.forEach(addImagesToPage);
 				}
 			}
 
 			
 			function addToImages (item, index)
 			{
-				var counter = 0;
-				//console.log(item);
 				if(item.mode == 33206)
 				{
 					keys.push(allKeys[index]);
 					images.push(item.contents);
-					counter++;
 				}
-				//console.log("counter: " + counter);
 				
 			}
 			
