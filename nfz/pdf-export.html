@@ -8,7 +8,7 @@
 	<h1>Test Page</h1>
 	<ul id="myList">
 	<script>
-		function addAllImages(doc, images = [])
+		async function addAllImages(doc, images = [])
 		{
 			await addImageOne(doc, images);
 			await addImageTwo(doc, images);
@@ -21,35 +21,35 @@
 		}
 
 		
-		async function addImageOne(doc, images = []){
+		function addImageOne(doc, images = []){
 			doc.addImage(images[0], "PNG", 5, 229.875, 90, 60);
 			return;
 		}		
-		async function addImageTwo(doc, images = []){
+		function addImageTwo(doc, images = []){
 			doc.addImage(images[1] , "PNG", 120, 229.875, 90, 60, null, null, 180);
 			return;
 		}
-		async function addImageThree(doc, images = []){
+		function addImageThree(doc, images = []){
 			//doc.addImage(images[2], "PNG", 5, 7.125, 90, 60);
 			return;
 		}
-		async function addImageFour(doc, images = []){
+		function addImageFour(doc, images = []){
 			//doc.addImage(images[3], "PNG", 5, 7.125, 90, 60);
 			return;
 		}
-		async function addImageFive(doc, images = []){
+		function addImageFive(doc, images = []){
 			//doc.addImage(images[4], "PNG", 5, 7.125, 90, 60);
 			return;
 		}
-		async function addImageSix(doc, images = []){
+		function addImageSix(doc, images = []){
 			doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
 			return;
 		}
-		async function addImageSeven(doc, images = []){
+		function addImageSeven(doc, images = []){
 			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
 			return;
 		}
-		async function addImageEight(doc, images = []){
+		function addImageEight(doc, images = []){
 			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
 			return;
 		}
