@@ -27,7 +27,23 @@
 			return;
 		}		
 
-	
+		function testAsync(doc, images = []){
+		return new Promise((resolve,reject)=>{
+			//here our function should be implemented 
+			setTimeout(()=>{
+				doc.addImage(images[0], "PNG", 5, 229.875, 90, 60);
+				doc.addImage(images[1] , "PNG", 205, 169.875, 90, 60, null, null, 180);
+				doc.addImage(images[2], "PNG", 205, 95.625, 90, 60, null, null, 180);
+				doc.addImage(images[3], "PNG", 205, 21.375, 90, 60, null, null, 180);
+				doc.addImage(images[4], "PNG", 205, -52.875, 90, 60, null, null, 180);
+				doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
+				doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
+				doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
+				resolve();
+			;} , 1000
+			);
+		});
+		}
 	
 	
 		window.onload = async function() {
@@ -134,6 +150,7 @@
 		
 		//addAllImages(doc, images);
 		await addImageOne(doc, images);
+		await testAsync(doc, images);
 		
 		doc.setFontSize(6);
 		
