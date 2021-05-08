@@ -8,6 +8,55 @@
 	<h1>Test Page</h1>
 	<ul id="myList">
 	<script>
+		async funtion addAllImages()
+		{
+			await addImageOne();
+			await addImageTwo();
+			await addImageThree();
+			await addImageFour();
+			await addImageFive();
+			await addImageSix();
+			await addImageSeven();
+			await addImageEight();
+		}
+
+		
+		async function addImageOne(){
+			doc.addImage(images[0], "PNG", 5, 229.875, 90, 60);
+			return;
+		}		
+		async function addImageTwo(){
+			doc.addImage(testimage , "PNG", 120, 229.875, 90, 60, null, null, 180);
+			return;
+		}
+		async function addImageThree(){
+			//doc.addImage(images[2], "PNG", 5, 7.125, 90, 60);
+			return;
+		}
+		async function addImageFour(){
+			//doc.addImage(images[3], "PNG", 5, 7.125, 90, 60);
+			return;
+		}
+		async function addImageFive(){
+			//doc.addImage(images[4], "PNG", 5, 7.125, 90, 60);
+			return;
+		}
+		async function addImageSix(){
+			doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
+			return;
+		}
+		async function addImageSeven(){
+			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
+			return;
+		}
+		async function addImageEight(){
+			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
+			return;
+		}
+
+	
+	
+	
 		window.onload = function() {
 		
 		var queryString = window.location.search;
@@ -127,51 +176,6 @@
 		doc.save("ZINE.pdf");
 		return;
 		
-				async funtion addAllImages()
-		{
-			await addImageOne();
-			await addImageTwo();
-			await addImageThree();
-			await addImageFour();
-			await addImageFive();
-			await addImageSix();
-			await addImageSeven();
-			await addImageEight();
-		}
-
-		
-		async function addImageOne(){
-			doc.addImage(images[0], "PNG", 5, 229.875, 90, 60);
-			return;
-		}		
-		async function addImageTwo(){
-			doc.addImage(testimage , "PNG", 120, 229.875, 90, 60, null, null, 180);
-			return;
-		}
-		async function addImageThree(){
-			//doc.addImage(images[2], "PNG", 5, 7.125, 90, 60);
-			return;
-		}
-		async function addImageFour(){
-			//doc.addImage(images[3], "PNG", 5, 7.125, 90, 60);
-			return;
-		}
-		async function addImageFive(){
-			//doc.addImage(images[4], "PNG", 5, 7.125, 90, 60);
-			return;
-		}
-		async function addImageSix(){
-			doc.addImage(images[5], "PNG", 5, 7.125, 90, 60);
-			return;
-		}
-		async function addImageSeven(){
-			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
-			return;
-		}
-		async function addImageEight(){
-			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
-			return;
-		}
 
 		}
 			
