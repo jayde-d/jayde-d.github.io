@@ -202,7 +202,11 @@
 		
 		doc.setTextColor("#FFFFFF");
 		doc.setFontSize(24);
-		doc.text(name, 10, 229.875);
+		doc.text(name, 10, 284.875);
+		
+		doc.setFontSize(11);
+		var stringToPrint = "seed: " + String(seed) + " - Zine made in NFZ with love :)"
+		doc.text(stringToPrint, 104, 214.625, align = "right");
 		
 		//END
 		doc.save("ZINE.pdf");
