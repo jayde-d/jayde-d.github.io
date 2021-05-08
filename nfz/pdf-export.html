@@ -101,8 +101,8 @@
 					objects = objectsRequest.result;
 					//console.log(objects);
 					objects.forEach(addToImages);
+					objectsRequest = objectStore.clear();
 				}
-				objectsRequest = objectStore.clear();
 			}
 
 			
