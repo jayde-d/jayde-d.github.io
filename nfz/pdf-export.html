@@ -89,7 +89,7 @@
 		if(dir == null)
 		{
 			window.alert("This page doesn't run correctly if you don't directly come from the zine generator!")
-			//return;
+			return;
 		}
 		else
 		{
@@ -152,13 +152,14 @@
 		
 		
 		const { jsPDF } = window.jspdf;
-		
-		// Default export is a4 paper, portrait, using millimeters for units
 		const doc = new jsPDF();
+
+		console.log(doc.getFontList());
+
 
 		doc.setDrawColor(128, 128, 128); // draw grey lines
 		doc.setLineWidth(0.1);
-		doc.setFont("Raleway-Light-normal");
+		doc.setFont("Raleway-Light-normal", "normal");
 		//doc.setFontType("normal");
 		 
 		doc.line(105, 1, 105, 74.25);
