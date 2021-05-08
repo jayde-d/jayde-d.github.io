@@ -10,8 +10,11 @@
 	<script>
 		async function addAllImages(doc, images = [])
 		{
-			await addImageOne(doc, images);
-			//await Promise
+			if(await addImageOne(doc, images) == false)
+			{
+				return;
+			}
+			
 		}
 
 		
@@ -25,7 +28,7 @@
 			doc.addImage(images[6], "PNG", 5, 81.375, 90, 60);
 			doc.addImage(images[7], "PNG", 5, 155.625, 90, 60);
 			
-			return;
+			return true;
 		}		
 
 	
