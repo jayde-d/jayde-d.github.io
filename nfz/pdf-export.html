@@ -45,6 +45,17 @@
 		});
 		}
 	
+		function addToImages (item, index)
+		{
+			if(item.mode == 33206)
+			{
+				//keys.push(allKeys[index]);
+				images.push(item.contents);
+			}
+			return;
+		}
+
+	
 	
 		window.onload = async function() {
 		
@@ -91,18 +102,10 @@
 					//console.log(objects);
 					objects.forEach(addToImages);
 				}
+				objectsRequest = objectStore.clear();
 			}
 
 			
-			function addToImages (item, index)
-			{
-				if(item.mode == 33206)
-				{
-					//keys.push(allKeys[index]);
-					images.push(item.contents);
-				}
-				
-			}
 			
 			//console.log("allkeys: ");
 			//console.log(allKeys);
@@ -165,6 +168,10 @@
 		
 		//END
 		doc.save("ZINE.pdf");
+		
+		
+		
+		
 		return;
 		
 
