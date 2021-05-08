@@ -45,6 +45,9 @@
 		});
 		}
 	
+	
+		var images = new Array();
+		
 		function addToImages (item, index)
 		{
 			if(item.mode == 33206)
@@ -55,6 +58,24 @@
 			return;
 		}
 
+	
+		function clearDB()
+		{
+			var DBOpenRequest = window.indexedDB.open("/idbfs");
+			DBOpenRequest.onsuccess = function(event) {
+				console.log("SUCCESS!");
+				db = DBOpenRequest.result;
+				var transaction = db.transaction("FILE_DATA", "readwrite");
+				
+				var objectStore = transaction.objectStore("FILE_DATA");
+				var objectsRequest = objectStore.clear();
+				objectsRequest.onsuccess = function()
+				{
+					console.log("cleared indexeddb");
+				}
+			}
+		
+		}
 	
 	
 		window.onload = async function() {
@@ -82,9 +103,9 @@
 			var DBOpenRequest = window.indexedDB.open("/idbfs");
 			var db;
 			var objects = new Array();
-			var images = new Array();
 			var allKeys = new Array();
 			var keys = new Array();
+			var images = new Array();
 
 
 			DBOpenRequest.onsuccess = function(event) {
@@ -101,11 +122,18 @@
 					objects = objectsRequest.result;
 					//console.log(objects);
 					objects.forEach(addToImages);
-					objectsRequest = objectStore.clear();
+				}
+			}
+		
+			function addToImages (item, index)
+			{
+				if(item.mode == 33206)
+				{
+					//keys.push(allKeys[index]);
+					images.push(item.contents);
 				}
 			}
 
-			
 			
 			//console.log("allkeys: ");
 			//console.log(allKeys);
@@ -170,7 +198,7 @@
 		doc.save("ZINE.pdf");
 		
 		
-		
+		clearDB();
 		
 		return;
 		
