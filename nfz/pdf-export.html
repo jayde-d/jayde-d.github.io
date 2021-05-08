@@ -45,7 +45,7 @@
 				
 				var objectStore = transaction.objectStore("FILE_DATA");
 				var objectsRequest = objectStore.getAll();
-				allKeys = objectsRequest.getAllKeys();
+				allKeys = objectStore.getAllKeys();
 				
 				objectsRequest.onsuccess = function()
 				{
@@ -68,9 +68,11 @@
 					counter++;
 				}
 				//console.log("counter: " + counter);
-				console.log(images);
+				
 			}
-		
+			
+			console.log(keys);
+			console.log(images);
 		}
 		
 		
