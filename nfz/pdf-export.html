@@ -60,19 +60,21 @@
 			{
 				if(item.mode == 33206)
 				{
-					keys.push(allKeys[index]);
+					//keys.push(allKeys[index]);
 					images.push(item.contents);
 				}
 				
 			}
 			
-			console.log("allkeys: " + allKeys);
-			console.log("keys : " + keys);
+			//console.log("allkeys: ");
+			//console.log(allKeys);
+			//console.log("keys : ");
+			//console.log(keys);
 			console.log("images : " + images);
 		}
 		
 		
-		if(images[1] = null)
+		if(images == null)
 		{
 			window.alert("No images to insert into PDF!");
 			return;
