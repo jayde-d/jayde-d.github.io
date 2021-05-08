@@ -34,6 +34,8 @@
 			var db;
 			var objects = new Array();
 			var images = new Array();
+			var allKeys = new Array();
+			var keys = new Array();
 
 
 			DBOpenRequest.onsuccess = function(event) {
@@ -43,7 +45,8 @@
 				
 				var objectStore = transaction.objectStore("FILE_DATA");
 				var objectsRequest = objectStore.getAll();
-
+				allKeys = objectsRequest.getAllKeys();
+				
 				objectsRequest.onsuccess = function()
 				{
 					objects = objectsRequest.result;
@@ -60,7 +63,8 @@
 				//console.log(item);
 				if(item.mode == 33206)
 				{
-					images.push(item.contents)
+					keys.push(allKeys[index]);
+					images.push(item.contents);
 					counter++;
 				}
 				//console.log("counter: " + counter);
@@ -70,6 +74,11 @@
 		}
 		
 		
+		if(images[1] = null)
+		{
+			window.alert("No images to insert into PDF!");
+			return;
+		}
 		
 		
 		const { jsPDF } = window.jspdf;
@@ -99,8 +108,8 @@
 		var testimage = new Image();
 		testimage.src = "testimage.png";
 		//doc.addImage(testimage, "PNG ", 2.5, 7.125, 90, 60);
-		doc.addImage(testimage, "PNG ", 5, 237, 90, 60);
-		doc.addImage(images[1], "PNG", 5, 162.75, 90, 60);
+		doc.addImage(testimage, "PNG ", 5, 229.875, 90, 60);
+		doc.addImage(images[1], "PNG", 5, 155.625, 90, 60);
 		
 		doc.setFontSize(6);
 		
