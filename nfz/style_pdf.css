@@ -1,66 +1,19 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 	2% 10% 
-							15% 10% 
-							auto 
-							2%;
-  padding: 25px;
-	
-	z-index: 5;
+  grid-template-columns: 	auto;
+  grid-gap: 50px;
+	font-size: 1.5em;
 }
 
-.main-name {
-	font-size: 4em;
+body{
 	font-family: Raleway, Tahoma, Verdana, sans-serif;
-	font-weight: 900;
-	text-align: left;
-	color:black;
-	
-	grid-row: 2;
-	grid-column: 2 / 4;
+	text-align: center;
 }
 
-.info {
-	font-size: 1em;
-	font-family: Raleway, Tahoma, Verdana, sans-serif;
-	font-weight: 250;
-	text-align: right;
-  color:black;
-	
-	grid-row: 1;
-	grid-column: 5;
-
+h1{
+	font-size: 3em;
+}
+p{
+	font-size: 2em;
 }
 
-.subtitle {
-	font-size: 1em;
-	font-family: Raleway, Tahoma, Verdana, sans-serif;
-	font-weight: 250;
-	text-align: left;
-	
-	grid-row: 3;
-	grid-column: 3 / 5;
-
-}
-
-.background {
-	background-image: url(media/background_45.jpg);
-	filter: url(#background-filter);
-	background-size: length auto 100%;
-	padding: 0px 0px 0px 0px;
-	z-index: -1;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-}
-
-.duotone-filters {
-    height: 0;
-    left: -9999em;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: 0;
-}

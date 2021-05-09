@@ -1,13 +1,13 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 	2% 10% 
-							15% 10% 
-							auto 
-							2%;
+  grid-template-columns: 	auto;
+  grid-template-rows: 9;
   padding: 25px;
 	
 	z-index: 5;
 }
+
+
 
 .main-name {
 	font-size: 4em;
