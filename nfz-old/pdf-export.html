@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+		<script src="Raleway-Light-normal.js"></script>
+		
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,500&display=swap" rel="stylesheet"> 		
+	<link rel="stylesheet" href="style_pdf.css">
+	</head>
+	<body>
+	<br>
+	<h1>Thank you!</h1>
+	<h1>A PDF with your zine will download shortly</h1>
+	<p>Here are instuctions on how to fold your zine!</p>
+	<br>
+	<br>
+	<br>
+	<div class="grid-container">
+		<div class="grid-item"><b>Step 1:</b> Print out your zine.</div>
+		<div class="grid-item"><b>Step 2:</b> Fold the page in half, in both directions.<br><br><img src="media/fold_1.png"></img></div>
+		<div class="grid-item"><b>Step 3:</b> On the long edge, fold the page again, into quarters.<br><br><img src="media/fold_2.png"></img></div>
+		<div class="grid-item"><b>Step 4:</b> Fold the page in half along the long edge, and cut halfway through the page, on the dotted line.<br><br><img src="media/fold_3.png"></img></div>
+		<div class="grid-item"><b>Step 5:</b> Unfold your fage back fla. You should see a cut right in the middle of the page.<br><br><img src="media/fold_4.png"></img></div>
+		<div class="grid-item"><b>Step 6:</b> Fold the page back in half along the short edge.<br><br><img src="media/fold_5.png"></img></div>
+		<div class="grid-item"><b>Step 7:</b> Fold the page into a plus shape, and fold the zine in a into a booklet, with pages 1 and 8 being on the outside.<br><br><img src="media/fold_6.png"></img></div>
+		<div class="grid-item"><b>Step 8:</b> Done! Enjoy your new, free, finite(less) zine.<br><br><img src="media/fold_7.png"></img></div>
+		<div class="small-text"><i>Images taken from <a href="https://en.wikibooks.org/wiki/Zine_Making/Putting_pages_together">here,</a> used under the <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0 licence</a></i></div>
+	</div>
+	
+	<script>
+		function testAsync(doc, images = []){
+		return new Promise((resolve,reject)=>{
+			//here our function should be implemented 
+			setTimeout(()=>{
+				doc.addImage(images[0], "PNG", 5, 229.875, 90, 60, null, "FAST");
+				doc.addImage(images[1] , "PNG", 205, 169.875, 90, 60, null, "FAST", 180);
+				doc.addImage(images[2], "PNG", 205, 95.625, 90, 60, null, "FAST", 180);
+				doc.addImage(images[3], "PNG", 205, 21.375, 90, 60, null, "FAST", 180);
+				doc.addImage(images[4], "PNG", 205, -52.875, 90, 60, null, "FAST", 180);
+				doc.addImage(images[5], "PNG", 5, 7.125, 90, 60, null, "FAST");
+				doc.addImage(images[6], "PNG", 5, 81.375, 90, 60, null, "FAST");
+				doc.addImage(images[7], "PNG", 5, 155.625, 90, 60, null, "FAST");
+				resolve();
+			;} , 1000
+			);
+		});
+		}
+	
+		
+		function clearDB()
+		{
+			var DBOpenRequest = window.indexedDB.open("/idbfs");
+			DBOpenRequest.onsuccess = function(event) {
+				console.log("SUCCESS!");
+				db = DBOpenRequest.result;
+				var transaction = db.transaction("FILE_DATA", "readwrite");
+				
+				var objectStore = transaction.objectStore("FILE_DATA");
+				var objectsRequest = objectStore.clear();
+				objectsRequest.onsuccess = function()
+				{
+					console.log("cleared indexeddb");
+				}
+			}
+		
+		}
+	
+	
+		window.onload = async function() {
+		
+		var queryString = window.location.search;
+		var urlParams = new URLSearchParams(queryString);
+		
+		var seed = urlParams.get("seed");
+		var dir = urlParams.get("directory");
+		var name = urlParams.get("name");
+		if(dir == null)
+		{
+			window.alert("This page doesn't run correctly if you don't directly come from the zine generator!")
+			return;
+		}
+		else
+		{
+		
+			var splitDir = dir.split("/");
+			
+			console.log(name);
+			console.log(seed);
+			//console.log(dir)
+			
+			//console.log(splitDir[2]+"/"+splitDir[3]);
+			
+			var DBOpenRequest = window.indexedDB.open("/idbfs");
+			var db;
+			var objects = new Array();
+			var allKeys = new Array();
+			var keys = new Array();
+			var images = new Array();
+
+
+			DBOpenRequest.onsuccess = function(event) {
+				console.log("SUCCESS!");
+				db = DBOpenRequest.result;
+				var transaction = db.transaction("FILE_DATA", "readwrite");
+				
+				var objectStore = transaction.objectStore("FILE_DATA");
+				var objectsRequest = objectStore.getAll();
+				allKeys = objectStore.getAllKeys();
+				
+				objectsRequest.onsuccess = function()
+				{
+					objects = objectsRequest.result;
+					//console.log(objects);
+					objects.forEach(addToImages);
+				}
+			}
+		
+			function addToImages (item, index)
+			{
+				if(item.mode == 33206)
+				{
+					//keys.push(allKeys[index]);
+					images.push(item.contents);
+				}
+			}
+
+			
+			//console.log("allkeys: ");
+			//console.log(allKeys);
+			//console.log("keys : ");
+			//console.log(keys);
+			console.log(images);
+		}
+		
+		
+		if(images == null)
+		{
+			window.alert("No images to insert into PDF!");
+			return;
+		}
+		
+		
+		const { jsPDF } = window.jspdf;
+		const doc = new jsPDF( "p", "mm", "a4", true, true);
+
+		console.log(doc.getFontList());
+
+
+		doc.setDrawColor(128, 128, 128); // draw grey lines
+		doc.setLineWidth(0.1);
+		doc.setFont("Raleway-Light", "normal");
+		//doc.setFontType("normal");
+		 
+		doc.line(105, 1, 105, 74.25);
+		doc.line(105, 222.75, 105, 297);
+		
+		// 0
+		doc.line(1, 74.25, 209, 74.25);
+		doc.line(1, 148.5, 209, 148.5);
+		doc.line(1, 222.75, 209, 222.75);
+		// 297
+		
+		doc.setLineDashPattern([2.5]);
+		//doc.setLineWidth(0.5);
+		//doc.line(105, 20, 105, 277);
+		doc.line(105, 74.25, 105, 222.75);
+		doc.rect(1, 1, 208, 295);
+		
+		
+		var testimage = new Image();
+		testimage.src = "testimage.png";
+		//doc.addImage(testimage, "PNG ", 2.5, 7.125, 90, 60);
+		
+		
+		//addAllImages(doc, images);
+		//await addImageOne(doc, images);
+		await testAsync(doc, images);
+		
+		doc.setFontSize(6);
+		
+		doc.text("1", 100, 259.875, align = "center" , rotate = 0);
+		doc.text("2", 110, 259.875, align = "center" , rotate = 180);
+		doc.text("3", 110, 185.625, align = "center" , rotate = 180);
+		doc.text("4", 110, 111.375, align = "center" , rotate = 180);
+		doc.text("5", 110, 37.125, align = "center" , rotate = 180);
+		doc.text("6", 100, 37.125, align = "center" , rotate = 0);
+		doc.text("7", 100, 111.375, align = "center" , rotate = 0);
+		doc.text("8", 100, 185.625, align = "center" , rotate = 0);
+		
+		doc.setTextColor("#FFFFFF");
+		doc.setFontSize(24);
+		doc.text(name, 10, 284.875);
+		
+		doc.setFontSize(11);
+		var stringToPrint = "seed: " + String(seed) + " - Zine made in NFZ with love :)"
+		doc.text(stringToPrint, 94, 214.625, align = "right");
+		
+		//END
+		doc.save("ZINE.pdf");
+		
+		
+		clearDB();
+		
+		return;
+		
+
+		}
+			
+
+	</script>
+	</body>
+</html>
