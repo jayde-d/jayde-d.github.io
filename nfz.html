@@ -1,7 +1,51 @@
 <!DOCTYPE html>
 
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;1,600&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="style-nfz.css">
+</head>
+
 <body>
-<h1>LANDING PAGE<h1>
+	<div class="Title"><img src="nfz/media/logo_black.png"></img></div>
+	<div class="spacer">
+		<div class="grid-container">
+		
+			<div class="grid-item">
+				<div class="rows">
+				<h1>A Unique Alternative!</h1>
+				<p>In a world where it seems every artist is turning to NFTs and other harmful blockchain systems to make sure only one person can "own" their derivative digital art, NFZ gives you infinite, free derivative digital art, with 100% less blockchain speculation!</p>
+				</div>
+			</div>
+			<div class="grid-item"><img src="nfz/media/mainpage_img_1.jpg"></img></div>
+			
+			<div class="grid-item"><img id="gif" src="nfz/media/mainpage_gif_2.gif" width="600" height="400"></img></div>
+			<div class="grid-item">
+				<div class="rows">
+				<h1>Every zine is unique!</h1>
+				<p>Infinite* zines await you! Each zine has a randomly generated island that's unique to you!</p>
+				</div>
+			</div>
+			
+			<div class="grid-item">
+				<div class="rows">
+				<h1>An easy to fold zine that's ALL YOURS!</h1>
+				<p>The tool exports your tool into a fully made PDF ready to print and share (or keep, it's yours!)</p>
+				</div>
+			</div>
+			<video width="600" height="400" autoplay muted loop> <source src="nfz/media/fold.mp4" type="video/mp4"> </video>
+			
+			
+			<div class="link"> <a  href="https://jayde.dev/nfz/zine-generator">Click here to generate a zine!</a></div>
+			<div class="credits">A project by Jayde D. - Copyright: 2021-whenever</div>
+		</div>
+	</div>
+	
+	
+	<script>
+		var bg_num = Math.ceil(Math.random() * 5);
+		document.getElementById('gif').src = "nfz/media/mainpage_gif_00" + bg_num + ".gif";
+	</script>
 <body>
 
 </html>

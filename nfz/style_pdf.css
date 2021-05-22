@@ -5,6 +5,10 @@
 	font-size: 1.5em;
 }
 
+.title {
+	align: center;
+}
+
 body{
 	font-family: Raleway, Tahoma, Verdana, sans-serif;
 	text-align: center;
