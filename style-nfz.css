@@ -72,6 +72,7 @@ p{
 
 .small-text
 {
-	font-size: 0.8em;
+	font-size: 0.3em;
+	grid-row: 3;
 }
 
