@@ -1,13 +1,10 @@
 .grid-header {
   display: grid;
-  grid-template-columns: 	auto;
-  grid-template-rows: 9;
-  padding-left: 1%; padding-top: 1%; padding-bottom: 1%; padding-right: 1%;
-  
+  grid-template-columns: 	[start] 10% [name-start] 10% [subtitle-start] 1fr [name-end] 1fr [end];
 	
+	padding: 2.5%;
 	z-index: 5;
 }
-
 
 .main-name {
 	font-size: 4em;
@@ -16,8 +13,10 @@
 	text-align: left;
 	color:black;
 	
+	
 	grid-row: 2;
-	grid-column: 2 / 4;
+	grid-column-start: name-start;
+	grid-column-end: name-end;
 }
 
 .info {
@@ -28,8 +27,8 @@
   color:black;
 	
 	grid-row: 1;
-	grid-column: 5;
-
+	grid-column-start: start;
+	grid-column-end: end;
 }
 
 .subtitle {
@@ -39,31 +38,19 @@
 	text-align: left;
 	
 	grid-row: 3;
-	grid-column: 3 / 5;
-
+	grid-column-start: subtitle-start;
+	grid-column-end: subtitle-end; 
 }
+
+@media only screen and (orientation: portrait) {
+	
+}
+
 
 
 a {
 	mix-blend-mode: difference;
 	color: white;
-}
-a:link {
-	opacity: 95%;
-
-}
-
-a:visited {
-	opacity: 80%;
-
-}
-
-a:hover {
-	opacity: 98%;
-}
-
-a:active {
-	opacity: 100%;
 }
 
 .grid-content {
