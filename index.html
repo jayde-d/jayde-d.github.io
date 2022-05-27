@@ -6,8 +6,7 @@
 	</head>
 	<body>
 		
-		
-		<svg class="duotone-filters" xmlns="http://www.w3.org/2000/svg">
+		<svg class="svg-invisible" xmlns="http://www.w3.org/2000/svg">
 			<filter id="pink-yellow" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 				<feColorMatrix type="matrix" values=".33 .33 .33 0 0
 						.33 .33 .33 0 0
@@ -21,7 +20,7 @@
 				</feComponentTransfer>
 				<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
 			</filter>
-			
+
 			<filter id="blue-blue" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 				<feColorMatrix type="matrix" values=".33 .33 .33 0 0
 						.33 .33 .33 0 0
@@ -35,7 +34,7 @@
 				</feComponentTransfer>
 				<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
 			</filter>
-			
+
 			<filter id="green-yellow" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 				<feColorMatrix type="matrix" values=".33 .33 .33 0 0
 						.33 .33 .33 0 0
@@ -49,7 +48,7 @@
 				</feComponentTransfer>
 				<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
 			</filter>
-			
+
 			<filter id="red-pink" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 				<feColorMatrix type="matrix" values=".33 .33 .33 0 0
 						.33 .33 .33 0 0
@@ -63,7 +62,7 @@
 				</feComponentTransfer>
 				<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
 			</filter>
-			
+
 			<filter id="purple-blue" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 				<feColorMatrix type="matrix" values=".33 .33 .33 0 0
 						.33 .33 .33 0 0
@@ -76,28 +75,62 @@
 					<feFuncA type="table" tableValues="0 1"/>
 				</feComponentTransfer>
 				<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
-			</filter>
-			
+			</filter>		
 		</svg>
 
-	
-		<div id="background" class="background"></div>
-		<div class="grid-container">
+		<svg version="1.1" class="svg-invisible" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" preserveAspectRatio="none">
+			<style type="text/css">
+				.st0{display:none;fill:#444444;}
+				.st1{fill:url(#SVGID_1_);}
+				.st2{fill:url(#SVGID_2_);}
+			</style>
+			<symbol id="Gradients">
+				<rect x="0" y="0" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 512 5.684342e-14)" class="st0" width="512" height="512"/>
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.298031e-08" y1="256" x2="512" y2="256" gradientTransform="matrix(6.123234e-17 1 -1 6.123234e-17 512 0)">
+					<stop  offset="0" style="stop-color:#FFFFFF"/>
+					<stop  offset="1" style="stop-color:#000000;stop-opacity:0"/>
+				</linearGradient>
+				<polygon class="st1" points="0,0 512,0 512,512 0,512 "/>
+				<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="161.1702" y1="256" x2="512" y2="256" gradientTransform="matrix(6.123234e-17 1 -1 6.123234e-17 512 0)">
+					<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+					<stop  offset="0.1038" style="stop-color:#F9F9F9;stop-opacity:0.1038"/>
+					<stop  offset="0.2384" style="stop-color:#E9E9E9;stop-opacity:0.2384"/>
+					<stop  offset="0.3901" style="stop-color:#CFCECF;stop-opacity:0.3901"/>
+					<stop  offset="0.5542" style="stop-color:#AAA9A9;stop-opacity:0.5542"/>
+					<stop  offset="0.7284" style="stop-color:#7B797A;stop-opacity:0.7284"/>
+					<stop  offset="0.9083" style="stop-color:#433F40;stop-opacity:0.9083"/>
+					<stop  offset="1" style="stop-color:#231F20"/>
+				</linearGradient>
+				<polygon class="st2" points="0,512 0,161.17 512,161.17 512,512 "/>
+			</symbol>>
+   		</svg>
+
+		<div id="background" class="background-image"></div>
+		<div class="gradient-container">
+			<svg id="gradient-svg" viewBox="0 0 512 512" preserveAspectRatio="none" width="100%" height="100%">
+				<use xlink:href="#Gradients">
+			</svg>
+		</div>
+		<div class="grid-header">
 			<div class="info"><a href="https://www.google.com"> here's the link to google</a></div>
 			<div class="main-name">Jayde D.</div>
 			<div class="subtitle">Subtitle info goes here, here's a longer example of some text for once in my life, hopefully this will be long enough to overflow the box area I'm talking about here. Cool.</div>
 		</div> 
+		<div class="grid-content">
+			<div class="content">    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla phasellus faucibus scelerisque eleifend donec pretium.</div>
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla phasellus faucibus scelerisque eleifend donec pretium.</div>
+			<div class="content">    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+		</div>
+		
 		
 		<script>
 			var colors = ["#pink-yellow", "#blue-blue", "#green-yellow", "#red-pink", "#purple-blue"];
 			var random_color = colors[Math.floor(Math.random() * colors.length)];
-			document.getElementById('background').style.filter = "url(" + random_color + ")";
 			
-			document.getElementById('background').style.backgroundSize = "contain"
-			
-			var bg_num = Math.floor(Math.random() * 2);
-			document.getElementById('background').style.backgroundImage = "url(media/background_" + bg_num + ".jpg)";
-			
+			document.getElementById('background').style.filter = "url(" + random_color + ")";		
+			document.getElementById('gradient-svg').style.filter = "url(" + random_color + ")";		
 		</script>
 
 		

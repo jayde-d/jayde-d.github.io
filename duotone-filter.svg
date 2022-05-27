@@ -1,0 +1,72 @@
+<svg class="duotone-filters" xmlns="http://www.w3.org/2000/svg">
+	<filter id="pink-yellow" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feColorMatrix type="matrix" values=".33 .33 .33 0 0
+				.33 .33 .33 0 0
+				.33 .33 .33 0 0
+				0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+		<feComponentTransfer in="colormatrix" result="componentTransfer">
+				<feFuncR type="table" tableValues="0.75 0.97"/>
+			<feFuncG type="table" tableValues="0.29 0.89"/>
+			<feFuncB type="table" tableValues="0.67 0.83"/>
+			<feFuncA type="table" tableValues="0 1"/>
+		</feComponentTransfer>
+		<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+	</filter>
+
+	<filter id="blue-blue" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feColorMatrix type="matrix" values=".33 .33 .33 0 0
+				.33 .33 .33 0 0
+				.33 .33 .33 0 0
+				0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+		<feComponentTransfer in="colormatrix" result="componentTransfer">
+				<feFuncR type="table" tableValues="0.04 0.83"/>
+			<feFuncG type="table" tableValues="0.47 0.97"/>
+			<feFuncB type="table" tableValues="0.45 0.96"/>
+			<feFuncA type="table" tableValues="0 1"/>
+		</feComponentTransfer>
+		<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+	</filter>
+
+	<filter id="green-yellow" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feColorMatrix type="matrix" values=".33 .33 .33 0 0
+				.33 .33 .33 0 0
+				.33 .33 .33 0 0
+				0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+		<feComponentTransfer in="colormatrix" result="componentTransfer">
+				<feFuncR type="table" tableValues="0.12 0.92"/>
+			<feFuncG type="table" tableValues="0.41 0.95"/>
+			<feFuncB type="table" tableValues="0.26 0.75"/>
+			<feFuncA type="table" tableValues="0 1"/>
+		</feComponentTransfer>
+		<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+	</filter>
+
+	<filter id="red-pink" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feColorMatrix type="matrix" values=".33 .33 .33 0 0
+				.33 .33 .33 0 0
+				.33 .33 .33 0 0
+				0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+		<feComponentTransfer in="colormatrix" result="componentTransfer">
+				<feFuncR type="table" tableValues="0.54 1"/>
+			<feFuncG type="table" tableValues="0.1 0.86"/>
+			<feFuncB type="table" tableValues="0.16 0.86"/>
+			<feFuncA type="table" tableValues="0 1"/>
+		</feComponentTransfer>
+		<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+	</filter>
+
+	<filter id="purple-blue" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feColorMatrix type="matrix" values=".33 .33 .33 0 0
+				.33 .33 .33 0 0
+				.33 .33 .33 0 0
+				0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+		<feComponentTransfer in="colormatrix" result="componentTransfer">
+				<feFuncR type="table" tableValues="0.54 0.44 0.59 0.66 1"/>
+			<feFuncG type="table" tableValues="0.23 0.45 0.71 0.93 1"/>
+			<feFuncB type="table" tableValues="0.6 0.72 0.9 0.93 1"/>
+			<feFuncA type="table" tableValues="0 1"/>
+		</feComponentTransfer>
+		<feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+	</filter>
+			
+</svg>
