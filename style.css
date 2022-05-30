@@ -1,6 +1,6 @@
 .grid-header {
   display: grid;
-  grid-template-columns: 	[start] 10% [name-start] 10% [subtitle-start] 1fr [name-end] 1fr [end];
+  grid-template-columns: [start] 10% [name-start] 10% [subtitle-start] 1fr [name-end] 1fr [end];
 	
 	padding: 2.5%;
 	z-index: 5;
@@ -42,8 +42,10 @@
 	grid-column-end: subtitle-end; 
 }
 
-@media only screen and (orientation: portrait) {
-	
+@media only screen and (orientation: portrait) and (max-width: 767px) {
+	.grid-header{
+		grid-template-columns: [start subtitle-start] 10% [name-start] 1fr [name-end end];
+	}
 }
 
 
