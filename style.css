@@ -1,3 +1,26 @@
+@font-face {
+	font-family: "RalewayVF";
+	src: url(media/Fonts/Raleway-VF.woff2);
+}
+@font-face {
+	font-family: "RalewayItalicVF";
+	src: url(media/Fonts/Raleway-Italic-VF.woff2);
+}
+
+/* ---------------- */
+
+body
+{
+	font-family: "RalewayVF", Tahoma, Verdana, sans-serif;
+}
+
+a {
+	mix-blend-mode: difference;
+	color: white;
+}
+
+/* ---------------- */
+
 .grid-header {
   display: grid;
   grid-template-columns: [start] 10% [name-start] 10% [subtitle-start] 1fr [name-end] 1fr [end];
@@ -8,7 +31,7 @@
 
 .main-name {
 	font-size: 4em;
-	font-family: Raleway, Tahoma, Verdana, sans-serif;
+	font-family: "RalewayVF", Tahoma, Verdana, sans-serif;
 	font-weight: 900;
 	text-align: left;
 	color:black;
@@ -21,7 +44,7 @@
 
 .info {
 	font-size: 1em;
-	font-family: Raleway, Tahoma, Verdana, sans-serif;
+	font-family: "RalewayVF", Tahoma, Verdana, sans-serif;
 	font-weight: 250;
 	text-align: right;
   color:black;
@@ -33,7 +56,7 @@
 
 .subtitle {
 	font-size: 1em;
-	font-family: Raleway, Tahoma, Verdana, sans-serif;
+	font-family: "RalewayVF", Tahoma, Verdana, sans-serif;
 	font-weight: 250;
 	text-align: left;
 	
@@ -48,12 +71,7 @@
 	}
 }
 
-
-
-a {
-	mix-blend-mode: difference;
-	color: white;
-}
+/* ---------------- */
 
 .grid-content {
 	display: grid;
@@ -76,10 +94,7 @@ a {
 	grid-column: 2;
 }
 
-
-
-
-
+/* ---------------- */
 
 .background-image {
 	background:rgb(40, 40, 40) url(media/Background_Pattern.png);
