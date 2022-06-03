@@ -197,21 +197,24 @@
 		var options = {align: "right", renderingMode: "fillThenStroke"}
 		doc.text(stringToPrint, 94, 214.625, options);
 		
+
+		var DBDeleteRequest = window.indexedDB.deleteDatabase("/idbfs");
+		DBDeleteRequest.onerror = function(event) {
+			console.log("Error deleting database.");
+		};
+
+		DBDeleteRequest.onsuccess = function(event) {
+			console.log("Database deleted successfully");
+		}
+
+
 		//END
 		doc.save("ZINE.pdf");
 		
 		
-		clearDB();
+		//clearDB();
 
-		var DBDeleteRequest = window.indexedDB.deleteDatabase("/idbfs");
 
-		DBDeleteRequest.onerror = function(event) {
-  			console.log("Error deleting database.");
-		};
-
-		DBDeleteRequest.onsuccess = function(event) {
-  			console.log("Database deleted successfully");
-		}
 
 		return;
 		
