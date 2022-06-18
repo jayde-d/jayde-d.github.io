@@ -1,6 +1,8 @@
 .nav-back {
 	color: black;
 	font-weight: 600;
+    font-family: "RalewayVF", Tahoma, Verdana, sans-serif;
+    line-height: normal;
 	position: absolute;
 	padding: 10px 0px 0px 20px;
 	text-align: left;
