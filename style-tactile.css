@@ -66,3 +66,7 @@
 	z-index: -1;
 	mix-blend-mode:overlay
 }
+
+body {
+	text-align: center;
+}
