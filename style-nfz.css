@@ -5,6 +5,8 @@
 
 .center-box{
 	display: grid;
+	align-self: left;
+	text-align: left;
 }
 
 

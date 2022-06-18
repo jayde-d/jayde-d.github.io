@@ -1,0 +1,155 @@
+@font-face {
+	font-family: "RalewayVF";
+	src: url(media/Fonts/Raleway-VF.woff2);
+}
+
+.center-box{
+	display: grid;
+}
+
+
+.grid-container {
+	display: grid;
+	grid-template-columns: [content-start] 1fr [content-end];
+	grid-template-rows: auto;
+
+	grid-area: middle;
+	
+	font-size: 1.4em;
+  	padding: 8px 8px 50px 8px;
+  
+	margin-left: 20vw;
+	margin-right: 20vw;
+
+
+	/*! align-items: center; */
+}
+
+
+@media screen and (max-width: 60em) {
+	.grid-container {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}
+
+@media screen and (max-width: 45em) {
+	.grid-container {
+		margin-left: 0%;
+		margin-right: 0%;
+	}
+}
+
+.rows{
+	/*! display: grid; */
+	grid-template-columns: auto;
+	grid-template-rows: auto auto;
+	max-height: 400px;
+}
+
+.spacer {
+	display:flex;
+	/*! align-items: center; */ 
+	justify-content: center;
+	flex-direction: column;
+	
+}
+
+.grid-content-main{
+    grid-column-start: content-start;
+    grid-column-end: content-end;
+
+	position: relative;
+}
+
+.noise{
+	position: relative;
+	padding: 50px 0px 50px 0;
+
+	font-weight: 700;
+	
+}
+
+.emphasis{
+	padding: 25px 0px 25px 0;
+
+}
+.fragile{
+	padding: 50px 0px 50px 0;
+
+}
+
+.image-below {
+	position: absolute;
+	margin: auto;
+	width: 112px;
+	height: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	mix-blend-mode:overlay
+}
+
+.title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link {
+  grid-column-start: 1;
+  grid-column-end: 3;
+	padding: 50px;
+	font-size: 2em;
+	font-weight: 600;
+	color: #244FFE;
+}
+
+.link p{
+	background-color: #FF0000;
+	color: #FFFFFF;
+	font-size: 0.5em;
+}
+
+.credits{
+	grid-column-start: 1;
+  grid-column-end: 3;
+	font-weight: 100;
+	font-size: 0.8em;
+}
+
+.back {
+	color: black;
+	font-weight: 600;
+	position: absolute;
+	padding: 10px 0px 0px 20px;
+	text-align: left;
+	align-self: left;
+	left: 0;
+}
+
+.sticky-container
+{
+	position: sticky;
+	top: 0;
+}
+
+body{
+	font-family: "RalewayVF", Tahoma, Verdana, sans-serif;
+	text-align: center;
+	line-height: 1.5;
+}
+
+h1{
+	font-size: 2em;
+	grid-row: 1;
+	padding: 0px 10px 0px 10px;
+}
+
+p{
+	font-size: 1em;
+	grid-row: 2;
+	padding: 0px 10px 0px 10px;
+}
