@@ -1,0 +1,26 @@
+@font-face {
+	font-family: "RalewayVF";
+	src: url(media/Fonts/Raleway-VF.woff2);
+}
+
+@font-face {
+	font-family: "RalewayItalicVF";
+	src: url(media/Fonts/Raleway-Italic-VF.woff2);
+}
+
+body{
+	font-family: "RalewayVF", Tahoma, Verdana, sans-serif;
+	line-height: 1.5;
+}
+
+h1{
+	font-size: 2em;
+	grid-row: 1;
+	padding: 0px 10px 0px 10px;
+}
+
+p{
+	font-size: 1em;
+	grid-row: 2;
+	padding: 0px 10px 0px 10px;
+}
