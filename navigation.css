@@ -9,6 +9,10 @@
     top: 0;
 }
 
+ .nav-back::before {
+    content: "← Go back to jayde.dev";
+ }
+
 .nav-container
 {
 	position: sticky;
