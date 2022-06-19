@@ -88,6 +88,7 @@ video{
 	.inner-grid
 	{
 		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: repeat(3, minmax(0, 350px));
 		
 	}
 	
@@ -98,6 +99,19 @@ video{
 	.inner-grid-item-desktop
 	{
 		display: none;
+	}
+	
+	p 
+	{
+		font-size: 0.75em;
+	}
+	h1 
+	{
+	 font-size: 1.5em;	
+	}
+	.link a
+	{
+		font-size: 0.75em;
 	}
 
 }
