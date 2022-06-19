@@ -1,16 +1,23 @@
 .center-box{
 	display: grid;
 	align-self: left;
-	text-align: left;
+	text-align: center;
 }
 
+.title img {
+	object-fit: cover;
+	max-height:100%;
+	width: 100%;
+	height: auto;
+  
+  }
 
 .grid-container {
 	display: grid;
-	grid-template-columns: 	repeat(2, minmax(50vmin, 600px));
-	grid-template-rows: repeat(4, minmax(33.3vmin, 400px));
-
-	grid-area: middle;
+	grid-auto-columns: 	minmax(0, 1200px);
+	grid-auto-flow: row;
+	
+	justify-content: center;
 	
 	font-size: 1.4em;
   padding: 8px 8px 50px 8px;
@@ -18,11 +25,81 @@
 	/*! align-items: center; */
 }
 
+.inner-grid-item {
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+	background-color: #244FFE;
+	color: white;
+}
+
+.inner-grid-item img{
+	object-fit: cover;
+	max-height:100%;
+	width: 100%;
+	height: auto;
+  }
+
+  .inner-grid{
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 600px));
+	grid-template-rows: repeat(3, minmax(0, 400px));
+  }
+
+  .mobile-only{
+	display: none;
+  }
+
+  .desktop-only{
+	display: none;
+  }
+
+
 .rows{
 	/*! display: grid; */
 	grid-template-columns: auto;
 	grid-template-rows: auto auto;
-	max-height: 400px;
+	
+}
+
+video{
+	object-fit: cover;
+	max-height:100%;
+	width: 100%;
+	height: auto;
+  }
+
+@media screen and (min-width: 50em) {
+	.rows{
+		max-height: 400px;
+	}
+
+	.mobile-only
+	{
+		display: none;
+	}
+	.desktop-only
+	{
+		display: flex;
+	}
+}
+
+@media screen and (max-width: 50em) {
+	.inner-grid
+	{
+		grid-template-columns: minmax(0, 1fr);
+		
+	}
+	
+	.inner-grid-item-mobile
+	{
+		display: flex;
+	}
+	.inner-grid-item-desktop
+	{
+		display: none;
+	}
+
 }
 
 .spacer {
@@ -34,23 +111,10 @@
 	
 }
 
-.grid-item {
-	display: flex;
-	justify-content: center;
-  align-items: center;
-	background-color: #244FFE;
-	color: white;
-}
-
-.title {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .link {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
 	padding: 50px;
 	font-size: 2em;
 	font-weight: 600;
@@ -64,24 +128,10 @@
 }
 
 .credits{
-	grid-column-start: 1;
-  grid-column-end: 3;
+	/* grid-column-start: 1;
+  grid-column-end: 3; */
 	font-weight: 100;
 	font-size: 0.8em;
-}
-
-.grid-item img{
-  object-fit: cover;
-  max-height:100%;
-  width: 100%;
-  height: auto;
-}
-
-video{
-  object-fit: cover;
-  max-height:100%;
-  width: 100%;
-  height: auto;
 }
 
 .small-text
@@ -89,6 +139,10 @@ video{
 	font-size: 0.5em;
 	grid-row: 3;
 }
+
+
+
+
 
 body
 {
