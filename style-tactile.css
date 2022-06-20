@@ -15,12 +15,20 @@
 	/*! align-items: center; */
 }
 
+.spacer {
+	height: 35px;
+	display: none;
+}
 
-@media screen and (max-width: 60em) {
+
+@media screen and (max-width: 62em) {
 	.grid-container {
 		margin-left: 10%;
 		margin-right: 10%;
 	}
+	.spacer{
+		display: block;
+	};
 }
 
 @media screen and (max-width: 45em) {
@@ -30,14 +38,21 @@
 	}
 }
 
-.grid-content-main{
+.grid-content-main {
     grid-column-start: content-start;
     grid-column-end: content-end;
 
 	position: relative;
 }
 
-.noise{
+hr {
+	margin: 60px 0px 64px 0px;
+	width:75%;
+	text-align:center;
+	justify-self: center;
+}
+
+.noise {
 	position: relative;
 	padding: 50px 0px 50px 0;
 
@@ -45,11 +60,11 @@
 	
 }
 
-.emphasis{
+.emphasis {
 	padding: 70px 0px 70px 0;
 	
 }
-.fragile{
+.fragile {
 	font-family: "RalewayItalicVF", Tahoma, Verdana, sans-serif;
 	font-weight: 300;
 	padding: 50px 0px 50px 0;
@@ -73,3 +88,5 @@ body {
 	text-align: center;
 	font-family: 'Sitka Text','Times New Roman', Times, serif;
 }
+
+
